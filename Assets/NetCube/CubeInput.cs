@@ -72,7 +72,6 @@ public class SampleCubeInput : SystemBase, PlayerInput.INiblerActions
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        
         var direction = context.ReadValue<Vector2>();
         _cubeInput.horizontal = (int) math.round(direction.x);
         _cubeInput.vertical = (int) math.round(direction.y);

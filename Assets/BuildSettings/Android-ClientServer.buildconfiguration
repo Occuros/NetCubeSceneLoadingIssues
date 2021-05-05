@@ -1,0 +1,36 @@
+{
+    "Dependencies": [
+        "GlobalObjectId_V1-1-efd815fb310344e61bf5fa7dc0f06555-93214019566545601-0"
+    ],
+    "Components": [
+        {
+            "$type": "Unity.Build.Classic.ClassicBuildProfile, Unity.Build.Classic",
+            "$version": 1,
+            "Platform": "android",
+            "Configuration": 2
+        },
+        {
+            "$type": "Unity.Build.Common.GeneralSettings, Unity.Build",
+            "ProductName": "Holoship-Netcode",
+            "CompanyName": "Holonautic",
+            "Version": "1.0.0"
+        },
+        {
+            "$type": "Unity.Build.Common.SceneList, Unity.Build",
+            "$version": 1,
+            "BuildCurrentScene": true,
+            "SceneInfos": []
+        },
+        {
+            "$type": "Unity.Build.Common.PlayerScriptingDefines, Unity.Build",
+            "Defines": [
+                "ENABLE_HYBRID_RENDERER_V2"
+            ]
+        },
+        {
+            "$type": "Unity.Build.Android.AndroidAPILevels, Unity.Build.Android",
+            "MinAPILevel": 23,
+            "TargetAPILevel": 0
+        }
+    ]
+}

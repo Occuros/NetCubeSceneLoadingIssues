@@ -32,7 +32,7 @@
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "KeyboardAndMouse;Oculus",
+                    "groups": "Testing",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -43,7 +43,7 @@
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "KeyboardAndMouse;Oculus",
+                    "groups": "Testing",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -54,7 +54,7 @@
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "KeyboardAndMouse;Oculus",
+                    "groups": "Testing",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -65,42 +65,47 @@
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "KeyboardAndMouse;Oculus",
+                    "groups": "Testing",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "f11231c8-3a3a-42b5-b5e8-7e574a8ecaeb",
+                    "path": "<XRController>{RightHand}/thumbstick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Testing",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
     ],
     "controlSchemes": [
         {
-            "name": "KeyboardAndMouse",
-            "bindingGroup": "KeyboardAndMouse",
+            "name": "Testing",
+            "bindingGroup": "Testing",
             "devices": [
                 {
+                    "devicePath": "<XRController>",
+                    "isOptional": true,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<XRInputV1::Oculus::Miramar>",
+                    "isOptional": true,
+                    "isOR": false
+                },
+                {
                     "devicePath": "<Keyboard>",
-                    "isOptional": false,
+                    "isOptional": true,
                     "isOR": false
                 },
                 {
                     "devicePath": "<Mouse>",
-                    "isOptional": false,
-                    "isOR": false
-                }
-            ]
-        },
-        {
-            "name": "Oculus",
-            "bindingGroup": "Oculus",
-            "devices": [
-                {
-                    "devicePath": "<OculusTouchController>",
-                    "isOptional": false,
-                    "isOR": false
-                },
-                {
-                    "devicePath": "<OculusHMD>",
                     "isOptional": false,
                     "isOR": false
                 }

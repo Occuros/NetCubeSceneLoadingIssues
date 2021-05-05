@@ -1,0 +1,34 @@
+{
+    "Dependencies": [
+        "GlobalObjectId_V1-1-450f20c3e50de4631a862cc7b7da1ae6-93214019566545601-0"
+    ],
+    "Components": [
+        {
+            "$type": "Unity.Build.Classic.ClassicBuildProfile, Unity.Build.Classic",
+            "$version": 1,
+            "Platform": "win",
+            "Configuration": 2
+        },
+        {
+            "$type": "Unity.Build.Common.SceneList, Unity.Build",
+            "$version": 1,
+            "BuildCurrentScene": false,
+            "SceneInfos": [
+                {
+                    "Scene": "GlobalObjectId_V1-1-8d22efc3b7087254abb93be42827710d-102900000-0",
+                    "AutoLoad": true
+                },
+                {
+                    "Scene": "GlobalObjectId_V1-1-18fb13ba48998ff4b839937120afcbae-102900000-0",
+                    "AutoLoad": true
+                }
+            ]
+        },
+        {
+            "$type": "Unity.Build.Common.GeneralSettings, Unity.Build",
+            "ProductName": "HoloShip",
+            "CompanyName": "Holonautic",
+            "Version": "1.0.0"
+        }
+    ]
+}
