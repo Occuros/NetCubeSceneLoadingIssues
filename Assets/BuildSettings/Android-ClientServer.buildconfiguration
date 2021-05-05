@@ -18,8 +18,17 @@
         {
             "$type": "Unity.Build.Common.SceneList, Unity.Build",
             "$version": 1,
-            "BuildCurrentScene": true,
-            "SceneInfos": []
+            "BuildCurrentScene": false,
+            "SceneInfos": [
+                {
+                    "Scene": "GlobalObjectId_V1-1-fe490058f4d434ffeaf53cdab96a0ed5-102900000-0",
+                    "AutoLoad": true
+                },
+                {
+                    "Scene": "GlobalObjectId_V1-1-68c962d4baf5246e48899b15357ee081-102900000-0",
+                    "AutoLoad": true
+                }
+            ]
         },
         {
             "$type": "Unity.Build.Common.PlayerScriptingDefines, Unity.Build",
