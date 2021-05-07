@@ -308,6 +308,8 @@ MonoBehaviour:
   Ghosts:
   - prefab: {fileID: 2552174147846842480, guid: bd05f2145763d425091243a36d80d893, type: 3}
     enabled: 1
+  - prefab: {fileID: 4286155282719922423, guid: de3262a79f6274e83b74e4910265f2a0, type: 3}
+    enabled: 1
 --- !u!4 &1420250221
 Transform:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 {
     "name": "NetCube",
+    "rootNamespace": "",
     "references": [
         "Unity.Burst",
         "Unity.Entities",
@@ -8,7 +9,8 @@
         "Unity.Mathematics",
         "Unity.Networking.Transport",
         "Unity.NetCode",
-        "Unity.InputSystem"
+        "Unity.InputSystem",
+        "Unity.Scenes"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

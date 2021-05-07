@@ -38,7 +38,8 @@ public class Game : SystemBase
             {
                 world.EntityManager.CreateEntity(typeof(EnableNetCubeGame));
                 // Client worlds automatically connect to localhost
-                NetworkEndPoint ep = NetworkEndPoint.LoopbackIpv4;
+                // NetworkEndPoint ep = NetworkEndPoint.LoopbackIpv4;
+                var ep = NetworkEndPoint.Parse("192.168.86.71", 7979);
                 ep.Port = 7979;
 #if UNITY_EDITOR
                 ep = NetworkEndPoint.Parse(ClientServerBootstrap.RequestedAutoConnect, 7979);

@@ -7,7 +7,7 @@
             "$type": "Unity.Build.Classic.ClassicBuildProfile, Unity.Build.Classic",
             "$version": 1,
             "Platform": "android",
-            "Configuration": 2
+            "Configuration": 1
         },
         {
             "$type": "Unity.Build.Common.GeneralSettings, Unity.Build",
@@ -21,11 +21,7 @@
             "BuildCurrentScene": false,
             "SceneInfos": [
                 {
-                    "Scene": "GlobalObjectId_V1-1-8d22efc3b7087254abb93be42827710d-102900000-0",
-                    "AutoLoad": true
-                },
-                {
-                    "Scene": "GlobalObjectId_V1-1-18fb13ba48998ff4b839937120afcbae-102900000-0",
+                    "Scene": "GlobalObjectId_V1-1-fe490058f4d434ffeaf53cdab96a0ed5-102900000-0",
                     "AutoLoad": true
                 }
             ]
