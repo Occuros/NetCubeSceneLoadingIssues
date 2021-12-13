@@ -103,11 +103,19 @@ MonoBehaviour:
   Importance: 1
   prefabId: bd05f2145763d425091243a36d80d893
   Name: Cube
-  RefGameObjects: []
-  ComponentNames: []
+  RefGameObjects:
+  - {fileID: 2469323487610213414}
+  - {fileID: 2469323487610213414}
+  ComponentNames:
+  - Unity.Transforms.Translation
+  - Unity.Transforms.Rotation
   PrefabTypeOverrides: []
   SendTypeOverrides: []
-  VariantOverrides: []
+  VariantOverrides:
+  - Value: 6128860104974352098
+    OverrideIndex: 0
+  - Value: 1099291954416493788
+    OverrideIndex: 1
 --- !u!114 &1710426002176190917
 MonoBehaviour:
   m_ObjectHideFlags: 0

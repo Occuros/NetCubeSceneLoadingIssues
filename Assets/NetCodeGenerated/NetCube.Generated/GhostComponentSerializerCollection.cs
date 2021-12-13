@@ -11,6 +11,8 @@ namespace NetCube.Generated
         protected override void OnCreate()
         {
             var ghostCollectionSystem = World.GetOrCreateSystem<GhostCollectionSystem>();
+            ghostCollectionSystem.AddSerializer(NetCubeRotationPrecisionVariantGhostComponentSerializer.State);
+            ghostCollectionSystem.AddSerializer(NetCubeTranslationPrecisionVariantGhostComponentSerializer.State);
         }
 
         protected override void OnUpdate()

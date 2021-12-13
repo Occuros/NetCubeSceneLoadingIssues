@@ -5,6 +5,7 @@ using Unity.NetCode;
 using Unity.Networking.Transport;
 using Unity.Burst;
 using Unity.Collections;
+using UnityEngine;
 
 public struct EnableNetCubeGame : IComponentData
 {}
@@ -39,12 +40,13 @@ public class Game : SystemBase
                 world.EntityManager.CreateEntity(typeof(EnableNetCubeGame));
                 // Client worlds automatically connect to localhost
                 // NetworkEndPoint ep = NetworkEndPoint.LoopbackIpv4;
-                var ep = NetworkEndPoint.Parse("192.168.86.71", 7979);
+                var ep = NetworkEndPoint.Parse("192.168.86.250", 7979);
                 ep.Port = 7979;
 #if UNITY_EDITOR
                 ep = NetworkEndPoint.Parse(ClientServerBootstrap.RequestedAutoConnect, 7979);
 #endif
                 network.Connect(ep);
+                Debug.Log($"We are joining through {ep.Address}");
             }
             #if UNITY_EDITOR || UNITY_SERVER
             else if (world.GetExistingSystem<ServerSimulationSystemGroup>() != null)
@@ -73,7 +75,11 @@ public class GoInGameClientSystem : SystemBase
     protected override void OnCreate()
     {
         RequireSingletonForUpdate<EnableNetCubeGame>();
-        RequireForUpdate(GetEntityQuery(ComponentType.ReadOnly<NetworkIdComponent>(), ComponentType.Exclude<NetworkStreamInGame>()));
+        RequireSingletonForUpdate<GhostPrefabCollectionComponent>();
+
+        RequireForUpdate(GetEntityQuery(
+            ComponentType.ReadOnly<NetworkIdComponent>(), 
+            ComponentType.Exclude<NetworkStreamInGame>()));
     }
 
     protected override void OnUpdate()
@@ -98,7 +104,8 @@ public class GoInGameServerSystem : SystemBase
     protected override void OnCreate()
     {
         RequireSingletonForUpdate<EnableNetCubeGame>();
-        RequireForUpdate(GetEntityQuery(ComponentType.ReadOnly<GoInGameRequest>(), ComponentType.ReadOnly<ReceiveRpcCommandRequestComponent>()));
+        RequireForUpdate(GetEntityQuery(ComponentType.ReadOnly<GoInGameRequest>(), 
+            ComponentType.ReadOnly<ReceiveRpcCommandRequestComponent>()));
     }
 
     protected override void OnUpdate()
@@ -117,7 +124,7 @@ public class GoInGameServerSystem : SystemBase
         Entities.WithReadOnly(networkIdFromEntity).ForEach((Entity reqEnt, in GoInGameRequest req, in ReceiveRpcCommandRequestComponent reqSrc) =>
         {
             commandBuffer.AddComponent<NetworkStreamInGame>(reqSrc.SourceConnection);
-            UnityEngine.Debug.Log(String.Format("Server setting connection {0} to in game", networkIdFromEntity[reqSrc.SourceConnection].Value));
+            Debug.Log(String.Format("Server setting connection {0} to in game", networkIdFromEntity[reqSrc.SourceConnection].Value));
 
             var player = commandBuffer.Instantiate(prefab);
             commandBuffer.SetComponent(player, new GhostOwnerComponent { NetworkId = networkIdFromEntity[reqSrc.SourceConnection].Value});
